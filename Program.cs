@@ -9,8 +9,8 @@ namespace GuessingGame
       var Guessing = true;
       var count = 0;
       var Guess = 100;
-      //   var Max = 100;
-      //   var Min = 0;
+      var Max = 100;
+      var Min = 0;
       Console.WriteLine("Think of a number between 1-100.");
       while (Guessing == true)
       {
@@ -27,11 +27,13 @@ namespace GuessingGame
           var HOrL = Console.ReadLine();
           if (HOrL == "higher")
           {
-            Guess = Guess + Guess / 2;
+            Guess = (Min + Max) / 2;
+            Min = Guess;
           }
           else
           {
-            Guess = Guess / 2;
+            Guess = (Min + Max) / 2;
+            Max = Guess;
           }
         }
       }
